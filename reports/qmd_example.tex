@@ -66,46 +66,6 @@
 \fi
 \makeatother
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -199,12 +159,12 @@
 \begin{document}
 \maketitle
 
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(tidyverse)}
-\end{Highlighting}
-\end{Shaded}
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{5}
+\tableofcontents
+}
 
 \begin{verbatim}
 -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
@@ -240,31 +200,36 @@ is adapted from Timbers (2020).}
 
 Results
 
-\pandocbounded{\includegraphics[keepaspectratio]{../results/horse_pops_plot.png}}
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=3.125in,height=\textheight,keepaspectratio]{../results/horse_pops_plot.png}
+
+}
+
+\caption{\label{fig-horsepop}}
+
+\end{figure}%
 
 Figure 1: Horse populations for all provinces in Canada from 1906 -
 1972.
 
-We can see from Figure 1 that Ontario, Saskatchewan and Alberta have had
-the highest horse populations in Canada. All provinces have had a
-decline in horse populations since 1940. This is likely due to the
-rebound of the Canadian automotive industry after the Great Depression
-and the Second World War. An interesting follow-up visualisation would
-be car sales per year for each Province over the time period visualised
-above to further support this hypothesis.
+We can see from Figure~\ref{fig-horsepop} that Ontario, Saskatchewan and
+Alberta have had the highest horse populations in Canada. All provinces
+have had a decline in horse populations since 1940. This is likely due
+to the rebound of the Canadian automotive industry after the Great
+Depression and the Second World War. An interesting follow-up
+visualisation would be car sales per year for each Province over the
+time period visualised above to further support this hypothesis.
 
 Suppose we were interested in looking in more closely at the province
 with the highest spread (in terms of standard deviation) of horse
-populations. We present the standard deviations in Table 1.
+populations. We present the standard deviations in
+Table~\ref{tbl-horses_sd}.
 
 Table 1. Standard deviation of historical (1906-1972) horse populations
 for each Canadian province.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{horses\_sd\_table }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"../results/horses\_sd.csv"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
 \begin{verbatim}
 Rows: 9 Columns: 2
@@ -277,14 +242,12 @@ i Use `spec()` to retrieve the full column specification for this data.
 i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{largest\_sd }\OtherTok{\textless{}{-}}\NormalTok{ horses\_sd\_table}\SpecialCharTok{$}\NormalTok{Province[}\DecValTok{1}\NormalTok{]}
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(horses\_sd\_table)}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{longtable}[]{@{}lr@{}}
+
+\caption{\label{tbl-horses_sd}Horse Population}
+
+\tabularnewline
+
 \toprule\noalign{}
 Province & Std \\
 \midrule\noalign{}
@@ -300,22 +263,35 @@ New Brunswick & 22019.49 \\
 Nova Scotia & 19879.25 \\
 British Columbia & 14945.66 \\
 P.E.I. & 11355.75 \\
+
 \end{longtable}
 
 Note that we define standard deviation (of a sample) as
 
 \[s = \sqrt{\frac{\sum_{i=1}^N (x_i - \overline{x})^2}{N-1} }\]
 
-Additionally, note that in Table 1 we consider the sample standard
-deviation of the number of horses during the same time span as Figure 1.
+Additionally, note that in Table~\ref{tbl-horses_sd} we consider the
+sample standard deviation of the number of horses during the same time
+span as Figure~\ref{fig-horsepop}.
 
-\pandocbounded{\includegraphics[keepaspectratio]{../results/horse_pop_plot_largest_sd.png}}
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{../results/horse_pop_plot_largest_sd.png}
+
+}
+
+\caption{\label{fig-horsepop-sd}}
+
+\end{figure}%
 
 Figure 2: Horse populations for the province with the largest standard
 deviation
 
-In Figure 2 we zoom in and look at the province of ???, which had the
-largest spread of values in terms of standard deviation.
+In Figure~\ref{fig-horsepop-sd} we zoom in and look at the province of
+Saskatchewan, which had the largest spread of values in terms of
+standard deviation.
 
 References
 
